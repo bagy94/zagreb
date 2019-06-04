@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin"
+        android:fontFamily="@font/source_sans_pro_regular"
+        android:text="@string/check_gallery"
+        android:textColor="@color/dark_navy"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/gallery_placeholder_size"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="3dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:showDividers="end"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/progressText">
+
+        <ImageView
+            android:id="@+id/imagePreview1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:scaleType="centerCrop"
+            tools:srcCompat="@tools:sample/backgrounds/scenic[19]" />
+
+        <Space
+            android:layout_width="3dp"
+            android:layout_height="match_parent" />
+
+        <ImageView
+            android:id="@+id/imagePreview2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            tools:srcCompat="@tools:sample/avatars[3]" />
+
+        <Space
+            android:layout_width="3dp"
+            android:layout_height="match_parent" />
+
+        <RelativeLayout
+            android:id="@+id/galleryShowMore"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageView
+
+                android:id="@+id/imagePreview3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:srcCompat="@tools:sample/backgrounds/scenic[1]" />
+
+            <TextView
+                android:id="@+id/gallerySize"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignStart="@+id/imagePreview3"
+                android:layout_alignTop="@+id/imagePreview3"
+                android:layout_alignEnd="@+id/imagePreview3"
+                android:layout_alignBottom="@+id/imagePreview3"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginBottom="0dp"
+                android:background="@drawable/gallery_show_more"
+                android:fontFamily="@font/source_sans_pro_bold"
+                android:gravity="center"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                tools:text="+5" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,10 @@
+<resources>
+    <string name="name_label">Your name</string>
+    <string name="friends_name_helper_text">It will be shown on postcard</string>
+    <string name="friend_name">Friend\'s name</string>
+    <string name="error_loading_postcard">Error on loading postcard image</string>
+    <string name="send_postcard">Send postcard</string>
+    <string name="postcard_copyright">Kopirajt</string>
+    <string name="mail_subject">Postcard from Zagreb</string>
+    <string name="creating_postcard">Please wait...\n Creating postcard for yout</string>
+</resources>

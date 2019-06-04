@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="friends_name_helper_text">Biti ce prikazano na razglednici</string>
+    <string name="name_label">Ime</string>
+    <string name="friend_name">Ime prijatelja</string>
+    <string name="error_loading_postcard">Greška prilikom učitavanja razglednice.</string>
+    <string name="send_postcard">Pošalji razglednicu</string>
+    <string name="postcard_copyright">Kopirajt</string>
+    <string name="mail_subject">Razglednica iz Zagreba</string>
+    <string name="creating_postcard">Pričekajte...\\n Kreiramo razglednicu za vas.</string>
+</resources>

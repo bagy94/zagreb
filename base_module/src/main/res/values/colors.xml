@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="dark_navy">#1D1D43</color>
+    <color name="dark_navy_70">#B31D1D43</color>
+    <color name="light_gray">#F5F5F5</color>
+    <color name="vivid_blue">#0069FF</color>
+    <color name="vivid_blue_80">#CC0069FF</color>
+    <color name="very_dark_gray">#4A4A4A</color>
+    <color name="gray_20">#4DFFFFFF</color>
+    <color name="rich_blue">#292A56</color>
+</resources>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="DetailTitle" parent="TextAppearance.AppCompat.Caption">
+        <item name="android:textSize">26sp</item>
+        <item name="android:fontFamily">@font/nexa_bold</item>
+        <item name="android:textColor">@color/dark_navy</item>
+        <item name="android:textAlignment">textStart</item>
+    </style>
+
+</resources>

@@ -1,0 +1,24 @@
+<resources>
+    <style name="BottomBarButton" parent="Widget.AppCompat.TextView">
+        <item name="android:gravity">center</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textColor">@color/dark_navy</item>
+        <item name="android:fontFamily">@font/nexa_bold</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:paddingTop">6dp</item>
+        <item name="android:drawablePadding">-10dp</item>
+    </style>
+
+    <style name="ExpendableLabel" parent="TextAppearance.AppCompat.Caption">
+        <item name="android:fontFamily">@font/source_sans_pro_regular</item>
+        <item name="android:textColor">@color/vivid_blue</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+    <style name="ExpendableContent" parent="TextAppearance.AppCompat.Caption">
+        <item name="android:fontFamily">@font/source_sans_pro_regular</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:lineSpacingMultiplier">1.10</item>
+        <item name="android:textColor">@color/very_dark_gray</item>
+    </style>
+</resources>

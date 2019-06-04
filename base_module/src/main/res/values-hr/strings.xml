@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="locations_label">Lokacije</string>
+    <string name="map_label">Karte</string>
+    <string name="about_project">O projektu</string>
+    <string name="team">Tim</string>
+    <string name="image_directory">Zagreb_Razglednice</string>
+</resources>

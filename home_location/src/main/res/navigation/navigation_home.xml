@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/navigation_home"
+            app:startDestination="@id/mapFragment">
+
+
+    <action android:id="@+id/actionOpenMapFragment"
+            app:destination="@id/mapFragment"/>
+
+    <action android:id="@+id/actionOpenLocationFragment"
+            app:destination="@id/locationsFragment"/>
+
+    <fragment android:id="@+id/locationsFragment"
+              android:name="hr.factory.home_location.location_list.fragment.LocationsFragment"
+              android:label="HomeFragment"
+              tools:layout="@layout/fragment_home"/>
+
+    <fragment android:id="@+id/mapFragment"
+              android:name="hr.factory.home_location.maps.fragment.MapFragment"
+              android:label="HomeMapFragment"
+              tools:layout="@layout/fragment_map"/>
+</navigation>

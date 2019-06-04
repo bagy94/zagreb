@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="check_gallery">Pogledajte i ostale fotografije u galeriji</string>
+    <string name="see_less">Prikaži manje</string>
+    <string name="see_more">Prikaži više</string>
+    <string name="location_address_label">Adresa</string>
+    <string name="open_location">Lokacija</string>
+    <string name="check_back">Pogledaj \\n iza</string>
+    <string name="send_postcard">Pošalji razglednicu</string>
+    <string name="mail_content_link">Na linku se nalazi slika odabrane lokacije: %1$s</string>
+</resources>

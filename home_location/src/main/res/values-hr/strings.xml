@@ -1,0 +1,12 @@
+<resources>
+    <string name="postcards_label">Razglednice</string>
+    <string name="historical_walk">Povijesna šetnja</string>
+    <string name="about_project">O projektu</string>
+    <string name="team">Tim</string>
+    <string name="language_eng">Engleski</string>
+    <string name="language_cro">Hrvatski</string>
+    <string name="now_and_then_label">Pogledajte kako izgledaju sad i kako su izgledale nekad</string>
+    <string name="historical_label">Povijesno</string>
+    <string name="present_label">Trenutno</string>
+    <string name="find_out_more">Saznaj više</string>
+</resources>

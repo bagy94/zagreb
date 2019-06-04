@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/bottombar_height"
+        android:orientation="horizontal">
+
+
+    <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/map_label"
+            style="@style/BottomBarButton"
+            android:drawableTop="@drawable/ic_map_bottom_bar"
+            android:paddingTop="6dp"
+            android:id="@+id/mapFragment"/>
+
+    <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/locations_label"
+            style="@style/BottomBarButton"
+            android:drawableTop="@drawable/ic_list_dark"
+            android:id="@+id/locations"/>
+
+</LinearLayout>

@@ -1,0 +1,10 @@
+<resources>
+    <string name="check_gallery">Check other Postcards from library</string>
+    <string name="see_less">See less</string>
+    <string name="see_more">See more</string>
+    <string name="location_address_label">Address</string>
+    <string name="open_location">Go to location</string>
+    <string name="check_back">Check \n Back</string>
+    <string name="send_postcard">Send postcard</string>
+    <string name="mail_content_link">On this link you can find image of selected place: %1$s</string>
+</resources>

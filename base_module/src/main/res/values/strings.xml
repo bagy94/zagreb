@@ -1,0 +1,20 @@
+<resources>
+    <string name="google_maps_api_key" translatable="false">AIzaSyD1Hq9nL_KmrFDm0yC4A8GmkforUj_PX_4</string>
+    <string name="map_label">Map</string>
+    <string name="locations_label">Locations</string>
+    
+    <string name="lorem_ipsum" translatable="false">Enim diam vulputate ut pharetra sit amet aliquam. Amet tellus cras adipiscing enim eu turpis. Sollicitudin ac orci phasellus egestas tellus rutrum tellus pellentesque eu. Viverra suspendisse potenti nullam ac. Integer quis auctor elit sed vulputate mi. Pulvinar sapien et ligula ullamcorper malesuada proin libero. Eu augue ut lectus arcu bibendum. Consectetur adipiscing elit duis tristique sollicitudin nibh sit amet. Feugiat in ante metus dictum at tempor commodo ullamcorper. Convallis posuere morbi leo urna molestie. Convallis convallis tellus id interdum velit laoreet id. Tincidunt arcu non sodales neque sodales ut etiam. Dui accumsan sit amet nulla facilisi morbi tempus. Etiam erat velit scelerisque in. Interdum consectetur libero id faucibus nisl tincidunt eget nullam. Ultricies integer quis auctor elit sed vulputate. Placerat duis ultricies lacus sed turpis.</string>
+
+    <string name="investors" translatable="false">DUMMY_CONTEXT_MISSING</string>
+    <string name="design_and_development" translatable="false">DUMMY_CONTEXT_MISSING</string>
+    <string name="development_en" translatable="false">DUMMY_CONTEXT_MISSING</string>
+    <string name="development_hr" translatable="false">DUMMY_CONTEXT_MISSING</string>
+    <string name="about_project_description_en" translatable="false">DUMMY_TEXT</string>
+    <string name="about_project_description_hr" translatable="false">DUMMY_TEXT</string>
+    <string name="about_meta_en" translatable="false">DUMMY_TEXT</string>
+    <string name="about_meta_hr" translatable="false">DUMMY_TEXT</string>
+
+    <string name="about_project">About project</string>
+    <string name="team">Team</string>
+    <string name="image_directory">Zagreb_Postcards</string>
+</resources>

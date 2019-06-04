@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="TextInputLayout" parent="Widget.Design.TextInputLayout">
+        <item name="hintTextAppearance">@style/TextInputLayout.HintText</item>
+        <item name="android:fontFamily">@font/source_sans_pro_regular</item>
+        <item name="helperTextTextAppearance">@style/TextInputLayout.HelperText</item>
+        <item name="android:textColorHint">@color/hint_color</item>
+    </style>
+    <style name="TextInputLayout.HintText" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/hint_color</item>
+    </style>
+    <style name="TextInputLayout.HelperText" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/hint_color_inactive</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+    <style name="TextInputLayout.EditTextTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorControlNormal">@color/hint_color_inactive</item>
+        <item name="colorControlActivated">@color/hint_color_active</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+</resources>

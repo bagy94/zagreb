@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/dark_navy">
+
+        <hr.factory.base_module.custom_view.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/toolbar_height"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:navigation_icon="@drawable/ic_arrow_back_white"/>
+
+        <ImageView
+                android:id="@+id/envelopeBehind"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:scaleType="fitXY"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/toolbar"
+                app:srcCompat="@drawable/ic_envelop_up"/>
+
+        <ImageView
+                android:id="@+id/envelopeFront"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:scaleType="fitXY"
+                app:layout_constraintBottom_toBottomOf="@+id/envelopeBehind"
+                app:layout_constraintEnd_toEndOf="@+id/envelopeBehind"
+                app:layout_constraintStart_toStartOf="@+id/envelopeBehind"
+                app:srcCompat="@drawable/ic_envelop_bottom"/>
+
+        <ImageView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:id="@+id/postcard"
+                app:layout_constraintStart_toStartOf="@+id/envelopeFront"
+                android:layout_marginStart="8dp"
+                app:layout_constraintTop_toTopOf="@id/envelopeBehind"
+                app:layout_constraintEnd_toEndOf="@id/envelopeBehind"
+                android:scaleType="fitXY"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintBottom_toBottomOf="@+id/envelopeFront"
+                android:layout_marginBottom="64dp"
+                android:layout_marginTop="67dp"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/yourNameBox"
+                style="@style/TextInputLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:hint="@string/name_label"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/envelopeFront">
+
+            <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/yourName"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/source_sans_pro_regular"
+                    android:textSize="16sp"
+                    android:theme="@style/TextInputLayout.EditTextTheme"
+                    android:textColor="@android:color/white"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/friendsNameBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="13dp"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/yourNameBox"
+                style="@style/TextInputLayout"
+                app:helperText="@string/friends_name_helper_text"
+                android:hint="@string/friend_name"
+                app:helperTextEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/friendsName"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/source_sans_pro_regular"
+                    android:textSize="16sp"
+                    android:theme="@style/TextInputLayout.EditTextTheme"
+                    android:textColor="@android:color/white"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/yourMessageBox"
+                style="@style/TextInputLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:hint="@string/name_label"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/friendsNameBox"
+                >
+
+            <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/yourMessage"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/source_sans_pro_regular"
+                    android:textSize="16sp"
+                    android:theme="@style/TextInputLayout.EditTextTheme"
+                    android:textColor="@android:color/white"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:enabled="false"
+                android:id="@+id/sendPostcard"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:background="@drawable/rounded_vivid_blue_disabled"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/yourMessageBox"
+                android:layout_marginBottom="16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintVertical_bias="0.0">
+
+            <TextView
+                    android:id="@+id/send"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:fontFamily="@font/source_sans_pro_bold"
+                    android:gravity="center"
+                    android:text="@string/send_postcard"
+                    android:textColor="@android:color/white"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+            <ImageView
+                    android:enabled="false"
+                    android:id="@+id/imgMailLogo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="14dp"
+                    android:src="@drawable/ic_mail_stateaware"
+                    app:layout_constraintBottom_toBottomOf="@+id/send"
+                    app:layout_constraintEnd_toStartOf="@+id/send"
+                    app:layout_constraintTop_toTopOf="@+id/send"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <include
+                layout="@layout/progress_bar"
+                android:layout_height="0dp"
+                android:layout_width="0dp"
+                android:id="@+id/progress"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:visibility="gone"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</ScrollView>

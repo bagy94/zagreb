@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                           xmlns:app="http://schemas.android.com/apk/res-auto"
+                                           xmlns:tools="http://schemas.android.com/tools"
+                                           android:id="@+id/drawer"
+                                           android:layout_width="match_parent"
+                                           android:layout_height="match_parent"
+                                           android:clipChildren="false"
+                                           android:clipToPadding="false">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipChildren="false"
+            android:clipToPadding="false">
+
+
+        <include
+                layout="@layout/fragment_drawer_content"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toTopOf="@id/bottomBar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+
+        <hr.factory.base_module.custom_view.Toolbar
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/toolbar_height"
+                android:id="@+id/toolbar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:navigation_icon="@drawable/ic_burger_blue"
+                android:background="@android:color/transparent"/>
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/bottombar_height"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:menu="@menu/bottom_bar_menu"
+                app:itemIconTint="@color/bottom_bar_color"
+                app:itemTextColor="@color/dark_navy"
+                app:itemTextAppearanceActive="@style/BottomBarItemTextAppearance"
+                app:itemTextAppearanceInactive="@style/BottomBarItemTextAppearance"
+                android:id="@+id/bottomBar"/>
+
+        <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:id="@+id/sendPostcard"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:src="@drawable/img_oval_mail"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:visibility="gone"
+                android:layout_marginBottom="30dp"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.navigation.NavigationView
+            android:id="@+id/drawerNavigationView"
+            android:layout_width="@dimen/drawer_width"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:fitsSystemWindows="true"
+            android:backgroundTint="@color/dark_navy">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_logo_splash"
+                    android:id="@+id/imageLogo"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginStart="27dp"
+                    android:layout_marginTop="24dp"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    android:layout_marginEnd="111dp"/>
+
+            <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="147dp"
+                    android:layout_height="156dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginTop="41dp"
+                    app:layout_constraintTop_toBottomOf="@+id/imageLogo"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    android:id="@+id/linearLayout">
+
+                <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:textAppearance="@style/NavigationDrawerItems"
+                        style="@style/NavigationDrawerItems"
+                        android:text="@string/postcards_label"
+                        android:layout_weight="1"
+                        android:id="@+id/drawerActionPostcards"/>
+                <!--<Switch
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/historical_walk"
+                        android:layout_weight="1"
+                        android:textAppearance="@style/NavigationDrawerItems"
+                        android:id="@+id/drawerHistoricalWalk"
+                        style="@style/NavigationDrawerItems"/>-->
+                <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:textAppearance="@style/NavigationDrawerItems"
+                        style="@style/NavigationDrawerItems"
+                        android:text="@string/about_project"
+                        android:layout_weight="1"
+                        android:id="@+id/drawerActionAbout"/>
+
+                <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:textAppearance="@style/NavigationDrawerItems"
+                        style="@style/NavigationDrawerItems"
+                        android:text="@string/team"
+                        android:layout_weight="1"
+                        android:id="@+id/drawerActionTeam"/>
+            </LinearLayout>
+
+            <TextView
+                    android:text="@string/language_eng"
+                    android:layout_width="@dimen/language_button_width"
+                    android:layout_height="@dimen/language_button_height"
+                    android:id="@+id/actionEng"
+                    android:layout_marginTop="101dp"
+                    app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginStart="40dp"
+                    style="@style/LanguageButton"
+                    android:textAlignment="center"/>
+
+            <TextView
+                    android:text="@string/language_cro"
+                    android:layout_width="@dimen/language_button_width"
+                    android:layout_height="@dimen/language_button_height"
+                    android:id="@+id/actionCro"
+                    app:layout_constraintStart_toEndOf="@+id/actionEng"
+                    app:layout_constraintTop_toTopOf="@+id/actionEng"
+                    style="@style/LanguageButton"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.navigation.NavigationView>
+
+</androidx.drawerlayout.widget.DrawerLayout>
