@@ -1,3 +1,3 @@
-include ':locations_single', ':base_module', ':app_location_gallery', ':app_send_postcard', ':app_project_info' , ':app', ':base_module', ':splash', ':app_navigation', ':home_location'
+include ':app_single_location', ':base_module', ':app_location_gallery', ':app_send_postcard', ':app_static', ':app', ':base_module', ':app_splash', ':navigation', ':app_home'
 
 

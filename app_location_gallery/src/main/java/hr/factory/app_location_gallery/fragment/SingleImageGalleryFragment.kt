@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import androidx.core.view.get
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.PagerSnapHelper
 import hr.factory.app_location_gallery.R
 import hr.factory.app_location_gallery.presenter.SingleImageGalleryPresenter
 import hr.factory.app_location_gallery.view.SingleImageGalleryView
@@ -77,7 +78,9 @@ class SingleImageGalleryFragment:BaseFragment<SingleImageGalleryPresenter> (), S
         toolbar.setOnNavIconListener(this)
     }
     private fun initRecycler(){
+        val snaper = PagerSnapHelper()
         gallery.addItemDecoration(SpaceItemDecorator(ITEM_SPACING_5.asDp(),false))
+        snaper.attachToRecyclerView(gallery)
         gallery.adapter = mAdapter
     }
 }

@@ -4,8 +4,13 @@ plugins{
     kotlin(Plugins.kotlinExtensions)
     kotlin(Plugins.kotlinKapt)
 }
+apply(plugin = Plugins.safeArgs)
 android {
     compileSdkVersion(AndroidSDK.compile)
+    defaultConfig {
+        minSdkVersion(AndroidSDK.min)
+        targetSdkVersion(AndroidSDK.target)
+    }
 
 }
 dependencies {

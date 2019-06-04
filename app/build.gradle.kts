@@ -26,10 +26,10 @@ android {
 dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
     implementation(project(":base_module"))
-    implementation(project(":splash"))
-    implementation(project(":app_navigation"))
-    implementation(project(":home_location"))
-    implementation(project(":locations_single"))
+    implementation(project(":app_splash"))
+    implementation(project(":navigation"))
+    implementation(project(":app_home"))
+    implementation(project(":app_single_location"))
     implementation(project(":app_location_gallery"))
     implementation(project(":app_send_postcard"))
 }

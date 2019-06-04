@@ -13,7 +13,4 @@ dependencies {
     implementation(project(":base_module"))
     implementation(project(":navigation"))
     implementation(Libraries.constraintLayout)
-    implementation(Libraries.recyclerView)
-    implementation(Libraries.glide)
-    kapt(Compilers.glide)
 }

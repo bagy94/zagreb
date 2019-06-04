@@ -11,7 +11,7 @@ android {
 dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
     implementation(project(":base_module"))
-    implementation(project(":app_navigation"))
+    implementation(project(":navigation"))
     implementation(Libraries.constraintLayout)
     implementation(Libraries.recyclerView)
     implementation(Libraries.glide)

@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import hr.factory.base_module.navigation.NavCommand
 import hr.factory.base_module.presenter.BasePresenter
@@ -20,8 +21,6 @@ abstract class BaseFragment<PRESENTER:BasePresenter>: Fragment(), BaseView, Koin
     protected var mMainController:MainController? = null
 
     abstract val viewId:Int
-
-    protected open val mNavController by lazy { findNavController() }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View  =
         inflater.inflate(viewId, container, false)
@@ -38,11 +37,12 @@ abstract class BaseFragment<PRESENTER:BasePresenter>: Fragment(), BaseView, Koin
         presenter.onViewDestroyed()
     }
 
-    override fun navigate(navigationCommand: NavCommand) {
+    override fun navigate(navigationCommand: NavCommand, navController: NavController?) {
+        val controller = navController ?: findNavController()
         when(navigationCommand){
-            is NavCommand.To -> mNavController.navigate(navigationCommand.navDirections)
-            is NavCommand.Back -> mNavController.navigateUp()
-            is NavCommand.BackTo -> mNavController.popBackStack(navigationCommand.destination,false)
+            is NavCommand.To -> controller.navigate(navigationCommand.navDirections)
+            is NavCommand.Back -> controller.navigateUp()
+            is NavCommand.BackTo -> controller.popBackStack(navigationCommand.destination,false)
         }
     }
 }
