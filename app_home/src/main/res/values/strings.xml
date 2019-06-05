@@ -9,11 +9,12 @@
         <item>hr</item>
     </string-array>
     <string name="language_eng">English</string>
-    <string name="language_cro">Croatian</string>
+    <string name="language_cro">Hrvatski</string>
     <string name="now_and_then_label">Check how they look now and how they looked Then</string>
     <string name="present_label">Present</string>
     <string name="historical_label">Historical</string>
     <string name="find_out_more">Find out more</string>
 
-
+    <string name="credits" translatable="false">Application \nDesign&amp;Development</string>
+    <string name="credits_link" translatable="false">Factory.hr</string>
 </resources>

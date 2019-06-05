@@ -2,4 +2,7 @@
 <resources>
     <color name="dark_purple">#0E1132</color>
     <color name="dark_gray">#4A4A4A</color>
+
+    <color name="custom_black">#0B0B19</color>
+    <color name="vivid_blue_50">#800069FF</color>
 </resources>
