@@ -1,4 +1,14 @@
 <resources>
+
+    <style name="BaseAppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowBackground">@color/light_gray</item>
+        <item name="colorPrimary">@color/vivid_blue</item>
+        <item name="colorPrimaryDark">@color/dark_navy</item>
+        <item name="colorAccent">@color/rich_blue</item>
+    </style>
+
+
     <style name="BottomBarButton" parent="Widget.AppCompat.TextView">
         <item name="android:gravity">center</item>
         <item name="android:textAllCaps">true</item>

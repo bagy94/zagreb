@@ -1,13 +1,8 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
-        <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/dark_navy</item>
-        <item name="android:windowBackground">@color/light_gray</item>
-        <item name="android:windowTranslucentStatus">true</item>
+    <style name="AppTheme" parent="BaseAppTheme">
+        <item name="thumbTint">@android:color/white</item>
     </style>
 
 </resources>
