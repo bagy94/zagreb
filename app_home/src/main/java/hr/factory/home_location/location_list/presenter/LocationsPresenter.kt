@@ -24,7 +24,9 @@ class  LocationsPresenterImpl(private val mInteractor:LocationInteractor, privat
         mDisposable = Observable.just(locations)
             .subscribeOn(Schedulers.newThread())
             .flatMap {
-                val wrappers = it.map { location -> AdapterDataWrapper(location,R.layout.location_item) }.toList()
+                val wrappers =
+                    it.map { location -> AdapterDataWrapper(location, R.layout.item_location_home) }
+                        .toList()
                 Observable.just(wrappers)
             }
             .observeOn(AndroidSchedulers.mainThread())

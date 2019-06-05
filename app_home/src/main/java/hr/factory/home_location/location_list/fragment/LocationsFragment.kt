@@ -1,12 +1,9 @@
 package hr.factory.home_location.location_list.fragment
 
-import android.Manifest
-import android.content.pm.PackageManager
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.app.ActivityCompat
 import androidx.navigation.Navigation
 import hr.factory.base_module.adapter.AdapterDataWrapper
 import hr.factory.base_module.adapter.RecyclerViewAdapter
@@ -22,13 +19,13 @@ import hr.factory.home_location.drawer_navigation.fragment.DrawerNavigationViewF
 import hr.factory.home_location.location_list.presenter.LocationsPresenter
 import hr.factory.home_location.location_list.view.LocationsView
 import hr.factory.home_location.location_list.view_holder.LocationViewHolder
-import kotlinx.android.synthetic.main.fragment_home.*
+import kotlinx.android.synthetic.main.fragment_locations.*
 import org.koin.android.ext.android.inject
 import org.koin.core.parameter.parametersOf
 
 class LocationsFragment: BaseFragment<LocationsPresenter>(), LocationsView, LocationViewHolder.OnLocationClickListener, RecyclerViewAdapter.Factory{
 
-    override val viewId: Int = R.layout.fragment_home
+    override val viewId: Int = R.layout.fragment_locations
 
     override val presenter: LocationsPresenter by inject{ parametersOf(this)}
 

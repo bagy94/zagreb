@@ -14,7 +14,7 @@
     <fragment android:id="@+id/locationsFragment"
               android:name="hr.factory.home_location.location_list.fragment.LocationsFragment"
               android:label="HomeFragment"
-              tools:layout="@layout/fragment_home"/>
+        tools:layout="@layout/fragment_locations" />
 
     <fragment android:id="@+id/mapFragment"
               android:name="hr.factory.home_location.maps.fragment.MapFragment"
