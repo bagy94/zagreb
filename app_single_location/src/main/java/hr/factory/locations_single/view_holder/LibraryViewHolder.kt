@@ -35,7 +35,7 @@ class LibraryViewHolder(view: View, onClickListener: View.OnClickListener):BaseV
                     .load(url3)
                     .transform(CenterCrop(), RoundedCorners(IMAGE_CORNER_RADIUS_5.asDp()))
                     .into(itemView.imagePreview3)
-            itemView.gallerySize.text = "+${item.galleryList.size}"
+            itemView.gallerySize.text = "+${item.galleryList.size - 2}"
         }
     }
     private fun getFirstImagePreviewUrl(galleryList: List<GalleryRaw>) = galleryList.first().imageUrl
