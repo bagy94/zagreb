@@ -16,11 +16,9 @@ import hr.factory.base_module.fragment.BaseFragment
 import hr.factory.base_module.models.location_raw_item.LocationRawItem
 import hr.factory.base_module.utils.SupportedLanguage
 import hr.factory.home_location.R
-import hr.factory.home_location.drawer_navigation.fragment.DrawerNavigationViewFragment
 import hr.factory.home_location.drawer_navigation.fragment.DrawerNavigationViewFragmentDirections
 import hr.factory.home_location.maps.adapter.MarkerInfoWindowAdapter
 import hr.factory.home_location.maps.presenter.MapPresenter
-import hr.factory.home_location.maps.ui.MapMarkerUI
 import hr.factory.home_location.maps.view.MapView
 import kotlinx.android.synthetic.main.fragment_map.*
 import org.koin.android.ext.android.inject
@@ -30,7 +28,7 @@ class MapFragment:BaseFragment<MapPresenter>(), MapView, OnMapReadyCallback, Com
     GoogleMap.OnInfoWindowClickListener, GoogleMap.OnMarkerClickListener, GoogleMap.OnMapClickListener{
 
     interface PostcardButtonDelegate{
-        fun showButton(markerData:MapMarkerUI)
+        fun showButton(markerData: LocationRawItem)
 
         fun hideButton()
     }
@@ -70,10 +68,6 @@ class MapFragment:BaseFragment<MapPresenter>(), MapView, OnMapReadyCallback, Com
     override fun onMapReady(googleMap: GoogleMap) {
         mGoogleMap = googleMap
         presenter.onMapsReady()
-        historicalMap.setOnCheckedChangeListener(this)
-        mGoogleMap.setOnInfoWindowClickListener(this)
-        mGoogleMap.setOnMarkerClickListener(this)
-        mGoogleMap.setOnMapClickListener(this)
     }
 
     override fun initMapSettings() {
@@ -82,6 +76,16 @@ class MapFragment:BaseFragment<MapPresenter>(), MapView, OnMapReadyCallback, Com
         mGoogleMap.setLatLngBoundsForCameraTarget(bounds)
         mGoogleMap.uiSettings.isCompassEnabled = false
         mGoogleMap.animateCamera(CameraUpdateFactory.newLatLngBounds(bounds,0))
+        historicalMap.setOnCheckedChangeListener(this)
+        mGoogleMap.setOnInfoWindowClickListener(this)
+        mGoogleMap.setOnMarkerClickListener(this)
+        mGoogleMap.setOnMapClickListener(this)
+        mGoogleMap.setMapStyle(
+            MapStyleOptions.loadRawResourceStyle(
+                context!!,
+                R.raw.google_maps_style
+            )
+        )
 
     }
 
@@ -89,26 +93,22 @@ class MapFragment:BaseFragment<MapPresenter>(), MapView, OnMapReadyCallback, Com
         locations.forEach {
             val markerOptions:MarkerOptions = createMarkerFromLocation(it)
             val marker = mGoogleMap.addMarker(markerOptions)
-            marker.tag =
-                if(mLanguage == SupportedLanguage.CRO)
-                    MapMarkerUI(it.titleHr!!.string, it.id)
-                else
-                    MapMarkerUI(it.titleEn!!.string,it.id)
-
+            marker.tag = it
         }
-        mGoogleMap.setInfoWindowAdapter(MarkerInfoWindowAdapter(context!!))
+        mGoogleMap.setInfoWindowAdapter(MarkerInfoWindowAdapter(context!!, mLanguage))
     }
 
     override fun onInfoWindowClick(p0: Marker?) {
         p0?.let {
-            val data = it.tag as MapMarkerUI
-            val directions = DrawerNavigationViewFragmentDirections.actionOpenSingleLocation(data.locationId)
+            val data = it.tag as LocationRawItem
+            val directions =
+                DrawerNavigationViewFragmentDirections.actionOpenSingleLocation(data.id)
             Navigation.findNavController(activity!!, R.id.drawer).navigate(directions)
         }
     }
     override fun onMarkerClick(p0: Marker?): Boolean {
         p0?.let {
-            val data = it.tag as MapMarkerUI
+            val data = it.tag as LocationRawItem
             mPostcardButtonDelegate?.showButton(data)
         }
         return false

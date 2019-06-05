@@ -1,11 +1,10 @@
 package hr.factory.zagreb_now_and_then
 
 import android.content.Context
-import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
 import androidx.annotation.ColorRes
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import hr.factory.base_module.utils.setLocale
 import hr.factory.base_module.view.MainController
@@ -16,6 +15,7 @@ class MainActivity : AppCompatActivity(), KoinComponent, MainController{
         super.onCreate(savedInstanceState)
         setLocale(this)
         setContentView(R.layout.activity_main)
+        setStatusBarVisibility(false)
     }
 
     override fun attachBaseContext(newBase: Context) {
@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity(), KoinComponent, MainController{
     }
 
     override fun setStatusBarVisibility(visible: Boolean) {
-        if(visible)
+        if (!visible)
             window.addFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS)
         else
             window.clearFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS)

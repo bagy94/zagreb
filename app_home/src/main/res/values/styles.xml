@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <style name="NavigationDrawerItems" parent="TextAppearance.AppCompat.Caption">
         <item name="android:textSize">14sp</item>
         <item name="android:textAllCaps">true</item>
@@ -56,6 +55,11 @@
 
     <style name="DrawerSwitch">
         <item name="trackTint">@color/switch_track_black_blue_50</item>
+        <item name="thumbTint">@color/switch_thumb_white_blue</item>
+    </style>
+
+    <style name="MapSwitch">
+        <item name="trackTint">@color/switch_track_gray_blue_50</item>
         <item name="thumbTint">@color/switch_thumb_white_blue</item>
     </style>
 
