@@ -28,6 +28,9 @@
             android:id="@+id/actionOpenStatic"
             app:destination="@id/staticAbout">
         </action>
+        <action
+            android:id="@+id/actionSendPostcardFromMap"
+            app:destination="@id/sendPostcard" />
     </fragment>
 
     <fragment android:id="@+id/locationSingle"
