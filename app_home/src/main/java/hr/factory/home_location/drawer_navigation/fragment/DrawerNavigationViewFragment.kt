@@ -6,28 +6,22 @@ import android.view.View
 import android.widget.CompoundButton
 import android.widget.Toast
 import androidx.core.view.GravityCompat
-import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
-import androidx.navigation.NavDestination
-import androidx.navigation.Navigation
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
-import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import hr.factory.base_module.custom_view.BottomBarItem
 import hr.factory.base_module.fragment.BaseFragment
+import hr.factory.base_module.models.location_raw_item.LocationRawItem
 import hr.factory.base_module.navigation.NavCommand
-import hr.factory.base_module.view.toggleSelectWith
-import hr.factory.home_location.drawer_navigation.presenter.DrawerNavigationPresenter
 import hr.factory.base_module.utils.SupportedLanguage
+import hr.factory.base_module.view.toggleSelectWith
 import hr.factory.home_location.R
+import hr.factory.home_location.drawer_navigation.presenter.DrawerNavigationPresenter
 import hr.factory.home_location.drawer_navigation.view.DrawerNavigationView
 import hr.factory.home_location.location_list.fragment.LocationsFragmentDirections
 import hr.factory.home_location.maps.fragment.MapFragment
 import hr.factory.home_location.maps.fragment.MapFragmentDirections
-import hr.factory.home_location.maps.ui.MapMarkerUI
 import kotlinx.android.synthetic.main.fragment_drawer.*
-import kotlinx.android.synthetic.main.fragment_drawer_content.*
 import org.koin.android.ext.android.inject
 import org.koin.core.parameter.parametersOf
 
@@ -76,12 +70,13 @@ class DrawerNavigationViewFragment: BaseFragment<DrawerNavigationPresenter>(),Vi
         }
     }*/
 
-    override fun showButton(markerData:MapMarkerUI) {
+    override fun showButton(markerData: LocationRawItem) {
         sendPostcard.visibility = View.VISIBLE
         sendPostcard.bringToFront()
         sendPostcard.setOnClickListener{
-            val directions = DrawerNavigationViewFragmentDirections.actionOpenSingleLocation(markerData.locationId)
-            navigate(NavCommand.To(directions))
+            val direction =
+                DrawerNavigationViewFragmentDirections.actionSendPostcardFromMap(markerData.imageAfterUrl)
+            navigate(NavCommand.To(direction))
         }
     }
 
