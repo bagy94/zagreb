@@ -16,7 +16,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             android:scaleType="fitXY"/>
     <TextView
-            android:text="TextView"
+        tools:text="St. Mark's Church"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:id="@+id/locationName"
@@ -27,7 +27,7 @@
             android:textAppearance="@style/Location.Name" style="@style/Location.Name"
             android:textColor="@color/dark_navy"/>
     <TextView
-            android:text="TextView"
+        tools:text="Markov Trg 1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:id="@+id/locationAddress"

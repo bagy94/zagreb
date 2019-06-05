@@ -11,7 +11,7 @@
     <dimen name="horizontal_recycler_height">211dp</dimen>
 
     <dimen name="location_item_picture_size">140dp</dimen>
-    <dimen name="watermark_width">292dp</dimen>
+    <dimen name="watermark_width">293dp</dimen>
     <dimen name="watermark_height">195dp</dimen>
     <dimen name="map_marker_icon_size">60dp</dimen>
 </resources>
