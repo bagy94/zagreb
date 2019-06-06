@@ -49,6 +49,9 @@ dependencies {
     api(Libraries.constraintLayout)
     //Maps
     api(Libraries.googleMaps)
+    //Glide
+    api(Libraries.glide)
+    kapt(Compilers.glide)
 }
 repositories {
     mavenCentral()

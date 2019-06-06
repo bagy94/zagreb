@@ -6,7 +6,10 @@ plugins{
 }
 android {
     compileSdkVersion(AndroidSDK.compile)
-
+    defaultConfig {
+        minSdkVersion(AndroidSDK.min)
+        targetSdkVersion(AndroidSDK.target)
+    }
 }
 dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))

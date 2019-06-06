@@ -19,6 +19,5 @@ dependencies {
     implementation(project(":navigation"))
     implementation(Libraries.constraintLayout)
     implementation(Libraries.recyclerView)
-    implementation(Libraries.glide)
     kapt(Compilers.glide)
 }
