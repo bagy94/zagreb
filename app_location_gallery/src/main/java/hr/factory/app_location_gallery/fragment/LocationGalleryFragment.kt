@@ -12,9 +12,12 @@ import hr.factory.app_location_gallery.view.LocationGalleryCategoryView
 import hr.factory.app_location_gallery.view_holder.GalleryViewHolder
 import hr.factory.base_module.adapter.AdapterDataWrapper
 import hr.factory.base_module.adapter.RecyclerViewAdapter
+import hr.factory.base_module.constants.ITEM_SPACING_3
+import hr.factory.base_module.custom_view.SpaceItemDecorator
 import hr.factory.base_module.fragment.BaseFragment
 import hr.factory.base_module.models.location_raw_item.GalleryRaw
 import hr.factory.base_module.navigation.NavCommand
+import hr.factory.base_module.utils.asDp
 import hr.factory.base_module.view.BaseViewHolder
 import kotlinx.android.synthetic.main.fragment_location_gallery.*
 import org.koin.android.ext.android.inject
@@ -66,5 +69,7 @@ class LocationGalleryFragment:BaseFragment<LocationGalleryCategoryPresenter> (),
     }
     private fun initRecycler(){
         gallery.layoutManager = GridLayoutManager(context,3)
+        gallery.addItemDecoration(SpaceItemDecorator(ITEM_SPACING_3.asDp()))
+        gallery.addItemDecoration(SpaceItemDecorator(ITEM_SPACING_3.asDp(), false))
     }
 }

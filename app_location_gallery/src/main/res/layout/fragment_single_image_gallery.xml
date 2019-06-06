@@ -4,16 +4,41 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/dark_navy">
+    android:background="@color/dark_navy"
+    android:clipChildren="true"
+    android:clipToPadding="true"
+    >
+
+    <Space
+        android:id="@+id/spacer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="35dp"
+        android:layout_marginRight="35dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="parent"
+        />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/spacer"
+        app:layout_constraintTop_toBottomOf="@id/spacer"
+        app:srcCompat="@drawable/img_stamp_gallery"
+        />
 
     <hr.factory.base_module.custom_view.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="@dimen/toolbar_height"
+        android:layout_marginTop="@dimen/status_bar_height"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:navigation_icon="@drawable/ic_arrow_back_white" >
+        app:navigation_icon="@drawable/ic_arrow_back_white"
+        >
 
     </hr.factory.base_module.custom_view.Toolbar>
 
@@ -31,19 +56,24 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/toolbar"
-        tools:text="St.Marks church" />
+        tools:text="St.Marks church"
+        />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/gallery"
         android:layout_width="0dp"
         android:layout_height="240dp"
         android:layout_marginTop="14dp"
+        android:clipToPadding="false"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/locationName"
         tools:listitem="@layout/item_single_gallery"
-        app:layout_constraintTop_toBottomOf="@+id/locationName" />
+        />
 
     <TextView
         android:id="@+id/openInDigitalLibrary"
@@ -52,12 +82,14 @@
         android:layout_marginStart="@dimen/activity_horizontal_margin"
         android:layout_marginTop="18dp"
         android:layout_marginEnd="@dimen/activity_horizontal_margin"
-        android:fontFamily="@font/source_sans_pro_bold"
+        android:fontFamily="@font/source_sans_pro_regular"
         android:text="@string/digital_library"
         android:textAllCaps="true"
         android:textColor="@color/vivid_blue"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/gallery" />
+        app:layout_constraintTop_toBottomOf="@+id/gallery"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

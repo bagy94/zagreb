@@ -15,6 +15,7 @@ import hr.factory.app_location_gallery.view.SingleImageGalleryView
 import hr.factory.app_location_gallery.view_holder.SingleImageViewHolder
 import hr.factory.base_module.adapter.AdapterDataWrapper
 import hr.factory.base_module.adapter.RecyclerViewAdapter
+import hr.factory.base_module.constants.ITEM_SCROLL_OFFSET
 import hr.factory.base_module.constants.ITEM_SPACING_5
 import hr.factory.base_module.custom_view.SpaceItemDecorator
 import hr.factory.base_module.fragment.BaseFragment
@@ -58,7 +59,10 @@ class SingleImageGalleryFragment:BaseFragment<SingleImageGalleryPresenter> (), S
 
     override fun showSelectedImage(selectedImagePosition: Int) {
         mAdapter.notifyItemChanged(selectedImagePosition)
-        (gallery.layoutManager!! as LinearLayoutManager).scrollToPosition(selectedImagePosition)
+        (gallery.layoutManager!! as LinearLayoutManager).scrollToPositionWithOffset(
+            selectedImagePosition,
+            ITEM_SCROLL_OFFSET.asDp()
+        )
     }
 
     override fun showLocationName(locationTitle: String) {
@@ -78,9 +82,9 @@ class SingleImageGalleryFragment:BaseFragment<SingleImageGalleryPresenter> (), S
         toolbar.setOnNavIconListener(this)
     }
     private fun initRecycler(){
-        val snaper = PagerSnapHelper()
+        val snapper = PagerSnapHelper()
         gallery.addItemDecoration(SpaceItemDecorator(ITEM_SPACING_5.asDp(),false))
-        snaper.attachToRecyclerView(gallery)
+        snapper.attachToRecyclerView(gallery)
         gallery.adapter = mAdapter
     }
 }
