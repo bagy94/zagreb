@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:layout_marginTop="10dp"
+    android:orientation="vertical"
+    >
 
     <ImageView
         android:layout_width="wrap_content"
@@ -12,7 +14,8 @@
         android:layout_marginTop="-32dp"
         android:src="@drawable/img_watermark"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        />
 
     <TextView
         android:id="@+id/locationName"
@@ -24,7 +27,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="ST. Marks Church" />
+        tools:text="ST. Marks Church"
+        />
 
     <hr.factory.base_module.custom_view.ExpandableTextView
         android:id="@+id/locationAbout"
@@ -38,6 +42,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/locationName"
-        app:maxCollapsedLines="5" />
+        app:maxCollapsedLines="5"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

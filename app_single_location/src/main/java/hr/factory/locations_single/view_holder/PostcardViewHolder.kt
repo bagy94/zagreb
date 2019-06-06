@@ -4,7 +4,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.LinearSnapHelper
 import androidx.recyclerview.widget.PagerSnapHelper
 import hr.factory.base_module.adapter.AdapterDataWrapper
 import hr.factory.base_module.adapter.RecyclerViewAdapter
@@ -38,7 +37,7 @@ class PostcardViewHolder(v: View, private val onClickListener: OnSendPostcardCli
     }
 
     override fun createViewHolder(inflater: LayoutInflater, parent: ViewGroup, viewType: Int): BaseViewHolder =
-        PostcardItemViewHolder(inflater.inflate(R.layout.postcard_layout,parent,false))
+        PostcardItemViewHolder(inflater.inflate(R.layout.view_postcard, parent, false))
 
 
     override fun bind(item: Any) {
@@ -48,7 +47,13 @@ class PostcardViewHolder(v: View, private val onClickListener: OnSendPostcardCli
             val adapter = RecyclerViewAdapter(content, this)
             val snapHolder = PagerSnapHelper()
             snapHolder.attachToRecyclerView(itemView.postcardHolder)
-            itemView.postcardHolder.addItemDecoration(SpaceItemDecorator(ITEM_SPACING_5.asDp(),false))
+            itemView.postcardHolder.addItemDecoration(
+                SpaceItemDecorator(
+                    ITEM_SPACING_5.asDp(),
+                    false,
+                    true
+                )
+            )
             itemView.postcardHolder.adapter = adapter
         }
     }
@@ -59,7 +64,7 @@ class PostcardViewHolder(v: View, private val onClickListener: OnSendPostcardCli
     private fun wrapContent(data:List<NowAndThenGalleryRaw>):List<AdapterDataWrapper<NowAndThenGalleryRaw>>{
         val wrappers = mutableListOf<AdapterDataWrapper<NowAndThenGalleryRaw>>()
         for(item in data){
-            wrappers.add(AdapterDataWrapper(item, R.layout.postcard_layout))
+            wrappers.add(AdapterDataWrapper(item))
         }
         return wrappers
     }

@@ -50,6 +50,9 @@
                 android:id="@+id/actionSendPostcard"
                 app:destination="@id/sendPostcard">
         </action>
+        <action
+            android:id="@+id/actionOpenLocationSingleGallery"
+            app:destination="@id/locationGallerySingle" />
     </fragment>
     <fragment android:id="@+id/locationGallery"
               android:name="hr.factory.app_location_gallery.fragment.LocationGalleryFragment"

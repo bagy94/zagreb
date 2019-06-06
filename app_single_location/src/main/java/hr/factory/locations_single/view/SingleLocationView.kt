@@ -11,4 +11,6 @@ interface SingleLocationView:BaseView {
     fun openLocationGallery(locationId : Int)
 
     fun openNavigationIntent(lat:Double, long:Double, mode:String? = null)
+
+    fun openSingleLocationGallery(locationId: Int, selectedImageUrl: String)
 }

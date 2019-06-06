@@ -4,7 +4,8 @@
     <string name="see_more">See more</string>
     <string name="location_address_label">Address</string>
     <string name="open_location">Go to location</string>
-    <string name="check_back">Check \n Back</string>
+    <string name="check_back">Check\nBack</string>
     <string name="send_postcard">Send postcard</string>
     <string name="mail_content_link">On this link you can find image of selected place: %1$s</string>
+    <string name="gallery_size_placeholder" translatable="false">"+%1$d"</string>
 </resources>

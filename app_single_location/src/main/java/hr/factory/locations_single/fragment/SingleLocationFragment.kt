@@ -62,6 +62,14 @@ class SingleLocationFragment:BaseFragment<SingleLocationPresenter> (), SingleLoc
         navigate(NavCommand.To(direction))
     }
 
+    override fun openSingleLocationGallery(locationId: Int, selectedImageUrl: String) {
+        val direction = SingleLocationFragmentDirections.actionOpenLocationSingleGallery(
+            locationId,
+            selectedImageUrl
+        )
+        navigate(NavCommand.To(direction))
+    }
+
     override fun onSendPostcardClickListener(imageUrl: String) {
         val direction = SingleLocationFragmentDirections.actionSendPostcard(imageUrl)
         navigate(NavCommand.To(direction))
@@ -70,6 +78,7 @@ class SingleLocationFragment:BaseFragment<SingleLocationPresenter> (), SingleLoc
     override fun openNavigationIntent(lat: Double, long: Double, mode: String?) {
         val query = "q=$lat,$long"
         Intent(Intent.ACTION_VIEW).apply {
+            //TODO Refactor const
             data = Uri.parse("google.navigation:$query")
             setPackage(MAPS_PACKAGE)
             startActivity(this)
@@ -85,9 +94,9 @@ class SingleLocationFragment:BaseFragment<SingleLocationPresenter> (), SingleLoc
 
             R.layout.item_post_card-> PostcardViewHolder(view,this)
 
-            R.layout.item_location-> LocationViewHolder(view, this)
+            R.layout.item_location_single -> LocationViewHolder(view, this)
 
-            R.layout.postcard_layout-> PostcardItemViewHolder(view)
+            R.layout.view_postcard -> PostcardItemViewHolder(view)
 
             else ->  LibraryViewHolder(view, this)
         }

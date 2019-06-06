@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.view.get
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.PagerSnapHelper
@@ -59,6 +58,7 @@ class SingleImageGalleryFragment:BaseFragment<SingleImageGalleryPresenter> (), S
 
     override fun showSelectedImage(selectedImagePosition: Int) {
         mAdapter.notifyItemChanged(selectedImagePosition)
+        (gallery.layoutManager!! as LinearLayoutManager).scrollToPosition(selectedImagePosition)
     }
 
     override fun showLocationName(locationTitle: String) {

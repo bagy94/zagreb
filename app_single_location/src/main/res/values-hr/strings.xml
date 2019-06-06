@@ -5,7 +5,7 @@
     <string name="see_more">Prikaži više</string>
     <string name="location_address_label">Adresa</string>
     <string name="open_location">Lokacija</string>
-    <string name="check_back">Pogledaj \\n iza</string>
+    <string name="check_back">Pogledaj\niza</string>
     <string name="send_postcard">Pošalji razglednicu</string>
     <string name="mail_content_link">Na linku se nalazi slika odabrane lokacije: %1$s</string>
 </resources>

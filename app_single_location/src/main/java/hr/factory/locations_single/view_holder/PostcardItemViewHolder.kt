@@ -1,15 +1,15 @@
 package hr.factory.locations_single.view_holder
 
 import android.view.View
-import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import hr.factory.base_module.constants.IMAGE_CORNER_RADIUS_5
 import hr.factory.base_module.models.location_raw_item.NowAndThenGalleryRaw
 import hr.factory.base_module.utils.asDp
+import hr.factory.base_module.utils.setImageFromUrlWithGlide
 import hr.factory.base_module.view.BaseViewHolder
 import hr.factory.locations_single.R
-import kotlinx.android.synthetic.main.postcard_layout.view.*
+import kotlinx.android.synthetic.main.view_postcard.view.*
 
 class PostcardItemViewHolder(view:View):BaseViewHolder(view), View.OnClickListener {
 
@@ -22,10 +22,11 @@ class PostcardItemViewHolder(view:View):BaseViewHolder(view), View.OnClickListen
     override fun bind(item: Any) {
         if (item is NowAndThenGalleryRaw) {
             mItem = item
-            Glide.with(itemView)
-                    .load(item.frontImageUrl)
-                    .transform(CenterCrop(), RoundedCorners(IMAGE_CORNER_RADIUS_5.asDp()))
-                    .into(itemView.postcardImage)
+            itemView.postcardImage.setImageFromUrlWithGlide(
+                item.frontImageUrl,
+                CenterCrop(),
+                RoundedCorners(IMAGE_CORNER_RADIUS_5.asDp())
+            )
         }
     }
 
@@ -47,14 +48,18 @@ class PostcardItemViewHolder(view:View):BaseViewHolder(view), View.OnClickListen
     }
     private fun onSwapImageClick(){
         isFrontShown = if(isFrontShown){
-            Glide.with(itemView)
-                .load(mItem.backImageUrl)
-                .into(itemView.postcardImage)
+            itemView.postcardImage.setImageFromUrlWithGlide(
+                mItem.backImageUrl,
+                CenterCrop(),
+                RoundedCorners(IMAGE_CORNER_RADIUS_5.asDp())
+            )
             false
         }else{
-            Glide.with(itemView)
-                .load(mItem.frontImageUrl)
-                .into(itemView.postcardImage)
+            itemView.postcardImage.setImageFromUrlWithGlide(
+                mItem.frontImageUrl,
+                CenterCrop(),
+                RoundedCorners(IMAGE_CORNER_RADIUS_5.asDp())
+            )
             true
         }
     }

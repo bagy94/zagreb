@@ -28,15 +28,23 @@ class SingleLocationPresenterImpl(private val mView: SingleLocationView, private
         data.add(AdapterDataWrapper(convertToAboutItem(location), R.layout.item_about))
         data.add(AdapterDataWrapper(convertToPostcard(location), R.layout.item_post_card))
         data.add(AdapterDataWrapper(convertToGallery(location), R.layout.item_galery))
-        data.add(AdapterDataWrapper(convertToLocation(location), R.layout.item_location))
+        data.add(AdapterDataWrapper(convertToLocation(location), R.layout.item_location_single))
         mView.showLocationInfo(data)
     }
 
     override fun handleClick(viewId: Int) {
         when(viewId){
-            R.id.openLocation ->{ mView.openNavigationIntent(location.latitude,location.longitude)}
+            R.id.openLocation -> mView.openNavigationIntent(location.latitude, location.longitude)
             R.id.galleryShowMore -> mView.openLocationGallery(location.id)
             R.id.burgerMenu -> mView.back()
+            R.id.imagePreview1 -> mView.openSingleLocationGallery(
+                location.id,
+                getFirstImagePreviewUrl(location.galleryList)
+            )
+            R.id.imagePreview2 -> mView.openSingleLocationGallery(
+                location.id,
+                getSecondImagePreviewUrl(location.galleryList)
+            )
             R.id.toolbarMenu->
                 if(language == SupportedLanguage.CRO)
                     mView.onShareClick(location.descriptionHr!!.string,location.imageNowUrl)
@@ -67,16 +75,40 @@ class SingleLocationPresenterImpl(private val mView: SingleLocationView, private
     }
 
     private fun convertToGallery(location: LocationRawItem): LibraryItem {
-        val list = mutableListOf<GalleryRaw>()
-        for (item in location.galleryList) {
-            list.add(item)
+        return with(location.galleryList) {
+            val img1Url = getFirstImagePreviewUrl(this)
+            val img2Url = getSecondImagePreviewUrl(this)
+            val img3Url = getThirdImagePreviewUrl(this)
+            val size = size - 2
+            LibraryItem(img1Url, img2Url, img3Url, size)
         }
-        return LibraryItem(list)
     }
 
     private fun convertToLocation(location: LocationRawItem): LocationItem {
         return with(location) {
             LocationItem(mapId, address, latitude, longitude)
+        }
+    }
+
+    private fun getFirstImagePreviewUrl(galleryList: List<GalleryRaw>) =
+        if (galleryList.isNotEmpty())
+            galleryList.first().imageUrl
+        else
+            ""
+
+    private fun getSecondImagePreviewUrl(galleryList: List<GalleryRaw>): String {
+        return if (galleryList.size > 1) {
+            galleryList[1].imageUrl
+        } else {
+            getFirstImagePreviewUrl(galleryList)
+        }
+    }
+
+    private fun getThirdImagePreviewUrl(galleryList: List<GalleryRaw>): String {
+        return if (galleryList.size > 2) {
+            galleryList[2].imageUrl
+        } else {
+            getSecondImagePreviewUrl(galleryList)
         }
     }
 }

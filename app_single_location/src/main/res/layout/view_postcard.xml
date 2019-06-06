@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="333dp"
+    android:layout_height="wrap_content"
+    >
+
+    <ImageView
+        android:id="@+id/postcardImage"
+        android:layout_width="0dp"
+        android:layout_height="220dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/backgrounds/scenic"
+        />
+
+    <ImageView
+        android:id="@+id/map"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/round_background"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_link_white"
+        app:layout_constraintEnd_toEndOf="@+id/postcardImage"
+        app:layout_constraintTop_toTopOf="@id/postcardImage"
+        />
+
+    <View
+        android:id="@+id/swapImage"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_weight="1"
+        android:background="@drawable/splited_diagonal_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:gravity="center"
+        android:rotation="-45"
+        android:text="@string/check_back"
+        android:textColor="@color/vivid_blue"
+        android:textSize="8sp"
+        android:textStyle="bold"
+        app:fontFamily="@font/source_sans_pro_regular"
+        app:layout_constraintBottom_toBottomOf="@+id/swapImage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.69"
+        app:layout_constraintStart_toStartOf="@+id/swapImage"
+        app:layout_constraintTop_toTopOf="@+id/swapImage"
+        app:layout_constraintVertical_bias="0.74"
+        app:textAllCaps="true"
+        />
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:rotation="-45"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+    <!--
+    <FrameLayout
+            android:layout_height="50dp"
+            android:layout_width="50dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:background="@drawable/splited_diagonal_background"
+            app:layout_constraintBottom_toBottomOf="@+id/postcardImage">
+
+    </FrameLayout>-->
+</androidx.constraintlayout.widget.ConstraintLayout>
